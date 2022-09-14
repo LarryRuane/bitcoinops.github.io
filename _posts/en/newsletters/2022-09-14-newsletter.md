@@ -19,29 +19,29 @@ This week's newsletter FIXME:harding
 meeting, highlighting some of the important questions and answers.  Click on a
 question below to see a summary of the answer from the meeting.*
 
-[Reduce bandwidth during initial headers sync when a block is found](review club 25720)
+[Reduce bandwidth during initial headers sync when a block is found][review club 25720]
 is a PR by Suhas Daftuar that reduces a node's network bandwidth
-requirement while synchronizing the blockchain with peers, including
-during initial block download (IBD). An important part of the bitcoin
+requirements while synchronizing the blockchain with peers, including
+during Initial Block Download (IBD). An important part of the Bitcoin
 ethos is minimizing resource demands of running a fully-validating node,
-including networking resources, so as to encourage more users
+including networking resources, to encourage more users
 to run full nodes. Speeding up the sync time furthers this
 goal as well.
 
 Blockchain synchronization occurs in two phases: First, the node
-receives only block headers from peers; these headers are sufficient
+receives block headers from peers; these headers are sufficient
 to determine the (likely) best chain (the one with the most work).
-Second, the node uses this best chain to request and download the
+Second, the node uses this best chain of headers to request and download the
 corresponding full blocks.
 This PR affects only the first phase (headers download).
 
 {% include functions/details-list.md
   q0="Why do nodes (mostly) receive `inv` block announcements while
   they are doing initial headers sync, even though they indicated
-  preference for headers announcements [BIP 130][]?"
+  preference for headers announcements ([BIP 130][])?"
   a0="A node will not announce a new block to a peer using a headers
   message if the peer has not previously sent a header to which the
-  new header connects to; and syncing nodes do not send headers."
+  new header connects to, and syncing nodes do not send headers."
   a0link="https://bitcoincore.reviews/25720#l-30"
 
   q1="Why is bandwidth wasted (during initial headers sync) by adding all
@@ -55,7 +55,7 @@ This PR affects only the first phase (headers download).
 
   q2="What would be your estimate (lower/upper bound) of how much
   bandwidth is wasted?"
-  a2="upper bound (in bytes): `(number_peers - 1) * number_blocks * 81`;
+  a2="Upper bound (in bytes): `(number_peers - 1) * number_blocks * 81`;
   lower bound: zero (if no new blocks arrive during headers sync;
   if the syncing peer and the network are fast, downloading all
   700k+ headers takes only a few minutes)"
@@ -79,7 +79,7 @@ This PR affects only the first phase (headers download).
   headers messages, and was probably not intended, but has the
   benefit of allowing headers sync to proceed even if the
   initial headers-sync peer is malicious, broken, or very slow.
-  With the PR, the node requests headers from only _one_ additional
+  With this PR, the node requests headers from only _one_ additional
   peer (rather than from all peers who announced the new block)."
   a3link="https://bitcoincore.reviews/25720#l-102"
 
