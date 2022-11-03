@@ -5,6 +5,7 @@ shortname: rbf
 aliases:
   - BIP125
   - Opt-in Replace-by-Fee
+  - Full-RBF
 
 ## Required.  At least one category to which this topic belongs.  See
 ## schema for options
@@ -135,11 +136,11 @@ see_also:
 ---
 Different node software can use different RBF rules, so there have
 been several variations.  The most widely-used form of RBF today is
-[BIP125][] opt-in RBF as
+[BIP125][] **opt-in RBF** as
 implemented in [Bitcoin Core 0.12.0][core12 rbf] and subsequent
 versions; this allows the creator of a transaction to signal that
 they're willing to allow it to be replaced by a higher-paying version.
-An alternative form of RBF is full-RBF that allows any transaction to
+An alternative form of RBF is **full-RBF** that allows any transaction to
 be replaced whether or not it signals BIP125 replacability.
 
 BIP125 requires a replacement transaction to pay both higher feerate
