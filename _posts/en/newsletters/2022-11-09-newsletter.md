@@ -7,7 +7,7 @@ type: newsletter
 layout: newsletter
 lang: en
 ---
-This week's newsletter FIXME
+This week's newsletter FIXME:harding
 
 ## News
 
@@ -150,6 +150,10 @@ FIXME:LarryRuane
 projects.  Please consider upgrading to new releases or helping to test
 release candidates.*
 
+- Rust Bitcoin 0.28.2 FIXME:harding
+
+- BTCPay FIXME:harding
+
 - [Bitcoin Core 24.0 RC3][] is a release candidate for the
   next version of the network's most widely used full node
   implementation.  A [guide to testing][bcc testing] is available.
@@ -174,8 +178,30 @@ Proposals (BIPs)][bips repo], and [Lightning BOLTs][bolts repo].*
 
 FIXME:harding
 
+- [Bitcoin Core #26419][] log: mempool: log removal reason in validation interface FIXME:adamjonas
+
+- [Core Lightning #5674][] msggen: Map the `extratlvs` field of `keysend` FIXME:harding
+
+- [Eclair #2404][] Support `scid_alias` and `zero_conf` for all commitment types FIXME:harding
+
+- [Eclair #2468][] Allow nodes to overshoot final htlc amount and expiry FIXME:harding
+
+- [Eclair #2469][] Randomize final cltv expiry FIXME:harding
+
+- [Eclair #2362][] Add private flag to channel updates FIXME:harding
+
+- [Eclair #2441][] Add support for arbitrary length onion errors FIXME:harding
+
+- [LND #7100][] guggero/btcd-dep-update FIXME:harding
+
+- [LDK #1761][] TheBlueMatt/2022-10-user-idempotency-token FIXME:harding
+
+- [LDK #1743][] tnull/2022-09-channel-events FIXME:harding
+
+- [BTCPay Server #4157][] Checkout v2 FIXME:harding
+
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="26438" %}
+{% include linkers/issues.md v=2 issues="26438,26419,5674,2404,2468,2469,2362,2441,7100,1761,1743,4157" %}
 [bitcoin core 24.0 rc3]: https://bitcoincore.org/bin/bitcoin-core-24.0/
 [bcc testing]: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/24.0-Release-Candidate-Testing-Guide
 [news222 rbf]: /en/newsletters/2022/10/19/#transaction-replacement-option
